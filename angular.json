@@ -20,12 +20,20 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {"glob": "**/*", "input": "node_modules/cesium/Build/Cesium", "output": "cesium"} // 拷贝Cesium的相关资源文件
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              //"node_modules/cesium/Build/Cesium/Widgets/widgets.css"  // 使用npm下载
+              "node_modules/_cesium@1.51.0@cesium/Build/Cesium/Widgets/widgets.css" // 使用cnpm下载
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/cesium/Build/Cesium/Cesium.js"
+            ]
           },
           "configurations": {
             "production": {

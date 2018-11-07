@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { ViewerService } from "./shared/viewer.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myAngularCesium';
+  title = 'AngularCesiumDemo';
+
+  constructor(private viewerService: ViewerService) {}
+
+  ngOnInit() {
+    this.viewerService.initView('cesiumContainer');
+  }
 }

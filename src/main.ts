@@ -8,6 +8,8 @@ if (environment.production) {
   enableProdMode();
 }
 
+window['CESIUM_BASE_URL'] = '/cesium/';
+
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
